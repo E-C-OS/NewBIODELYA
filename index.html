@@ -3,96 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 <title>Biodelya</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #0B0F19;
-  color: white;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 60px;
-  border-bottom: 1px solid #1f2937;
-}
-
-nav a {
-  color: #9CA3AF;
-  text-decoration: none;
-  margin-left: 20px;
-}
-
-.hero {
-  text-align: center;
-  padding: 120px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.hero h1 {
-  font-size: 48px;
-  line-height: 1.2;
-}
-
-.hero p {
-  margin-top: 20px;
-  color: #9CA3AF;
-  font-size: 18px;
-}
-
-.btn {
-  padding: 12px 24px;
-  border-radius: 8px;
-  border: none;
-  margin: 10px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.primary {
-  background: #4F8CFF;
-  color: white;
-}
-
-.secondary {
-  background: transparent;
-  border: 1px solid #374151;
-  color: white;
-}
-
-.section {
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: #111827;
-  padding: 25px;
-  border-radius: 12px;
-  border: 1px solid #1f2937;
-}
-
-.center {
-  text-align: center;
-}
-</style>
-</head>
 
 <body>
 
-<header>
-  <strong>Biodelya</strong>
+<header class="header">
+  <div class="logo">Biodelya</div>
   <nav>
     <a href="#">Produit</a>
     <a href="#">Approche</a>
@@ -101,161 +18,52 @@ nav a {
   </nav>
 </header>
 
-<!-- HERO -->
-
 <section class="hero">
-  <h1>Comprenez la complexité biologique. Décidez avec précision.</h1>
+  <h1>Comprenez. Analysez. Décidez.</h1>
+  <p>Transformez la complexité en décisions claires.</p>
 
-  <p>
-    Biodelya vous aide à analyser les systèmes biologiques complexes 
-    et à transformer vos données en actions claires et exploitables.
-  </p>
-
-  <div>
+  <div class="cta">
     <button class="btn primary">Essayer</button>
-    <button class="btn secondary">Découvrir</button>
+    <button class="btn secondary">Démo</button>
   </div>
 </section>
 
-<!-- PROMESSE -->
-
-<section class="section">
-  <h2>Vous n’êtes plus seul face à la complexité</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Analyse structurée</h3>
-      <p>
-        Décrivez votre situation biologique.  
-        Biodelya identifie les mécanismes clés et clarifie les interactions.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Compréhension approfondie</h3>
-      <p>
-        Explorez la dynamique des protéines, enzymes et systèmes complexes
-        grâce à des modèles physiques avancés.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Actions concrètes</h3>
-      <p>
-        Repartez avec des recommandations exploitables, 
-        adaptées à votre problématique.
-      </p>
-    </div>
-  </div>
+<section class="section grid">
+  <div class="card">Analyse avancée</div>
+  <div class="card">Décisions éclairées</div>
+  <div class="card">Résultats concrets</div>
 </section>
 
-<!-- CAS D'USAGE -->
+<script>
 
-<section class="section">
-  <h2>Applications</h2>
+// Animation apparition (scroll)
+const cards = document.querySelectorAll('.card');
 
-  <div class="grid">
-    <div class="card">
-      <h3>Recherche biomoléculaire</h3>
-      <p>
-        Comprenez la structure et la fonction des macromolécules 
-        avec une approche physique et computationnelle.
-      </p>
-    </div>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+});
 
-    <div class="card">
-      <h3>Optimisation enzymatique</h3>
-      <p>
-        Analysez les mécanismes catalytiques et améliorez 
-        l’efficacité des enzymes.
-      </p>
-    </div>
+cards.forEach(card => {
+  card.style.opacity = 0;
+  card.style.transform = "translateY(40px)";
+  observer.observe(card);
+});
 
-    <div class="card">
-      <h3>Aide à la décision scientifique</h3>
-      <p>
-        Transformez vos données complexes en décisions stratégiques
-        claires et justifiées.
-      </p>
-    </div>
-  </div>
-</section>
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href'))
+      ?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
 
-<!-- COMMENT -->
-
-<section class="section">
-  <h2>Comment fonctionne Biodelya</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>1. Décrivez votre situation</h3>
-      <p>
-        Contextualisez vos données ou votre problème scientifique.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>2. Analyse computationnelle</h3>
-      <p>
-        Biodelya applique des modèles issus de la physique, de la biologie
-        et de l’informatique.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>3. Résultats exploitables</h3>
-      <p>
-        Obtenez une compréhension claire et des recommandations concrètes.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- POSITIONNEMENT -->
-
-<section class="section center">
-  <h2>Une approche scientifique au service de la décision</h2>
-
-  <p>
-    Biodelya ne remplace pas votre expertise.  
-    Il renforce votre capacité à comprendre les systèmes biologiques
-    et à agir avec précision.
-  </p>
-</section>
-
-<!-- IMPACT -->
-
-<section class="section">
-  <h2>Impact</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Compréhension accrue</h3>
-      <p>Accédez aux mécanismes invisibles des systèmes biologiques.</p>
-    </div>
-
-    <div class="card">
-      <h3>Gain de temps</h3>
-      <p>Réduisez le temps d’analyse et de prise de décision.</p>
-    </div>
-
-    <div class="card">
-      <h3>Décisions fiables</h3>
-      <p>Prenez des décisions basées sur des modèles scientifiques solides.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-
-<section class="section center">
-  <h2>Commencez avec Biodelya</h2>
-  <button class="btn primary">Démarrer</button>
-</section>
-
-<footer class="center" style="padding:40px;border-top:1px solid #1f2937;color:#6B7280;">
-  © 2026 Biodelya
-</footer>
+</script>
 
 </body>
 </html>
