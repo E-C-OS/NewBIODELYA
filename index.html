@@ -7,68 +7,84 @@
 
 <style>
 body {
-  margin:0;
-  font-family: -apple-system, sans-serif;
-  background:#0B0F19;
-  color:white;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0B0F19;
+  color: white;
 }
 
 header {
-  display:flex;
-  justify-content:space-between;
-  padding:20px 50px;
-  border-bottom:1px solid #222;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+  border-bottom: 1px solid #1f2937;
 }
 
 nav a {
-  color:#aaa;
-  margin-left:20px;
-  text-decoration:none;
+  color: #9CA3AF;
+  text-decoration: none;
+  margin-left: 20px;
 }
 
 .hero {
-  text-align:center;
-  padding:100px 20px;
-  max-width:900px;
-  margin:auto;
+  text-align: center;
+  padding: 120px 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
 .hero h1 {
-  font-size:48px;
+  font-size: 48px;
+  line-height: 1.2;
 }
 
 .hero p {
-  color:#aaa;
+  margin-top: 20px;
+  color: #9CA3AF;
+  font-size: 18px;
 }
 
 .btn {
-  padding:12px 24px;
-  margin:10px;
-  border-radius:8px;
-  border:none;
-  cursor:pointer;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-.primary {background:#4F8CFF;color:white;}
-.secondary {background:transparent;border:1px solid #444;color:white;}
+.primary {
+  background: #4F8CFF;
+  color: white;
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid #374151;
+  color: white;
+}
 
 .section {
-  padding:80px 20px;
-  max-width:1100px;
-  margin:auto;
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
 }
 
 .card {
-  background:#111827;
-  padding:25px;
-  border-radius:12px;
-  border:1px solid #222;
+  background: #111827;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #1f2937;
+}
+
+.center {
+  text-align: center;
 }
 </style>
 </head>
@@ -76,48 +92,59 @@ nav a {
 <body>
 
 <header>
-  <h2>Biodelya</h2>
+  <strong>Biodelya</strong>
   <nav>
-    <a #produit>Produit</a>
-    <a #features>Fonctionnalités</a>
-    <a #cas>Cas d’usage</a>
-    <a #login>Connexion</a>
+    <a href="#">Produit</a>
+    <a href="#">Approche</a>
+    <a href="#">Applications</a>
+    <a href="#">Connexion</a>
   </nav>
 </header>
 
 <!-- HERO -->
 
 <section class="hero">
-  <h1>Comprenez vos problématiques biologiques. Agissez avec précision.</h1>
+  <h1>Comprenez la complexité biologique. Décidez avec précision.</h1>
 
   <p>
-    Biodelya analyse vos données, identifie les causes clés et vous propose 
-    des actions concrètes en quelques minutes.
+    Biodelya vous aide à analyser les systèmes biologiques complexes 
+    et à transformer vos données en actions claires et exploitables.
   </p>
 
-  <button class="btn primary">Essayer gratuitement</button>
-  <button class="btn secondary">Voir une démo</button>
+  <div>
+    <button class="btn primary">Essayer</button>
+    <button class="btn secondary">Découvrir</button>
+  </div>
 </section>
 
-<!-- VALEUR -->
+<!-- PROMESSE -->
 
 <section class="section">
-  <h2>Ce que vous obtenez</h2>
+  <h2>Vous n’êtes plus seul face à la complexité</h2>
 
   <div class="grid">
     <div class="card">
-      <h3>Analyse avancée</h3>
-      <p>Interprétez facilement des données biologiques complexes.</p>
+      <h3>Analyse structurée</h3>
+      <p>
+        Décrivez votre situation biologique.  
+        Biodelya identifie les mécanismes clés et clarifie les interactions.
+      </p>
     </div>
 
     <div class="card">
-      <h3>Recommandations concrètes</h3>
-      <p>Recevez des actions directement applicables.</p>
+      <h3>Compréhension approfondie</h3>
+      <p>
+        Explorez la dynamique des protéines, enzymes et systèmes complexes
+        grâce à des modèles physiques avancés.
+      </p>
     </div>
 
     <div class="card">
-      <h3>Aide à la décision</h3>
-      <p>Prenez les bonnes décisions rapidement et sereinement.</p>
+      <h3>Actions concrètes</h3>
+      <p>
+        Repartez avec des recommandations exploitables, 
+        adaptées à votre problématique.
+      </p>
     </div>
   </div>
 </section>
@@ -125,22 +152,31 @@ nav a {
 <!-- CAS D'USAGE -->
 
 <section class="section">
-  <h2>Cas d’usage</h2>
+  <h2>Applications</h2>
 
   <div class="grid">
     <div class="card">
-      <h3>Diagnostic biologique</h3>
-      <p>Identifiez les causes derrière vos résultats.</p>
+      <h3>Recherche biomoléculaire</h3>
+      <p>
+        Comprenez la structure et la fonction des macromolécules 
+        avec une approche physique et computationnelle.
+      </p>
     </div>
 
     <div class="card">
-      <h3>Optimisation de protocole</h3>
-      <p>Améliorez vos stratégies et interventions.</p>
+      <h3>Optimisation enzymatique</h3>
+      <p>
+        Analysez les mécanismes catalytiques et améliorez 
+        l’efficacité des enzymes.
+      </p>
     </div>
 
     <div class="card">
-      <h3>Analyse décisionnelle</h3>
-      <p>Passez de données à action sans complexité.</p>
+      <h3>Aide à la décision scientifique</h3>
+      <p>
+        Transformez vos données complexes en décisions stratégiques
+        claires et justifiées.
+      </p>
     </div>
   </div>
 </section>
@@ -152,64 +188,72 @@ nav a {
 
   <div class="grid">
     <div class="card">
-      <h3>1. Vous décrivez la situation</h3>
-      <p>Saisissez vos données ou votre contexte.</p>
+      <h3>1. Décrivez votre situation</h3>
+      <p>
+        Contextualisez vos données ou votre problème scientifique.
+      </p>
     </div>
 
     <div class="card">
-      <h3>2. L’IA analyse</h3>
-      <p>Biodelya identifie les signaux clés et les causes.</p>
+      <h3>2. Analyse computationnelle</h3>
+      <p>
+        Biodelya applique des modèles issus de la physique, de la biologie
+        et de l’informatique.
+      </p>
     </div>
 
     <div class="card">
-      <h3>3. Vous agissez</h3>
-      <p>Recevez un plan clair et directement exploitable.</p>
+      <h3>3. Résultats exploitables</h3>
+      <p>
+        Obtenez une compréhension claire et des recommandations concrètes.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- DIFFERENCE -->
+<!-- POSITIONNEMENT -->
 
-<section class="section">
-  <h2>Une IA au service de votre compréhension</h2>
+<section class="section center">
+  <h2>Une approche scientifique au service de la décision</h2>
 
   <p>
     Biodelya ne remplace pas votre expertise.  
-    Il vous aide à comprendre, décider et agir avec plus de précision.
+    Il renforce votre capacité à comprendre les systèmes biologiques
+    et à agir avec précision.
   </p>
 </section>
 
-<!-- RESULTATS -->
+<!-- IMPACT -->
 
 <section class="section">
-  <h2>Résultats</h2>
+  <h2>Impact</h2>
 
   <div class="grid">
     <div class="card">
-      <h3>-30%</h3>
-      <p>Temps d’analyse</p>
+      <h3>Compréhension accrue</h3>
+      <p>Accédez aux mécanismes invisibles des systèmes biologiques.</p>
     </div>
 
     <div class="card">
-      <h3>+45%</h3>
-      <p>Qualité des décisions</p>
+      <h3>Gain de temps</h3>
+      <p>Réduisez le temps d’analyse et de prise de décision.</p>
     </div>
 
     <div class="card">
-      <h3>+90%</h3>
-      <p>Satisfaction utilisateur</p>
+      <h3>Décisions fiables</h3>
+      <p>Prenez des décisions basées sur des modèles scientifiques solides.</p>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 
-<section class="section" style="text-align:center">
+<section class="section center">
   <h2>Commencez avec Biodelya</h2>
-  <button class="btn primary">Démarrer maintenant</button>
+  <button class="btn primary">Démarrer</button>
 </section>
 
-<footer style="text-align:center;padding:40px;border-top:1px solid #222;color:#777;">
+<footer class="center" style="padding:40px;border-top:1px solid #1f2937;color:#6B7280;">
   © 2026 Biodelya
 </footer>
 
