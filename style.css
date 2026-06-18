@@ -2,7 +2,37 @@ body {
   margin: 0;
   font-family: Inter, sans-serif;
   background: #0B0F19;
-  color: #E5E7EB;
+  overflow-x: hidden;
+
+}
+
+/* BACKGROUND CONTAINER */
+
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* HALO */
+
+.blob {
+  position: absolute;
+  width: 800px;
+  height: 600px;
+  top: 20%;
+  left: 40%;
+  
+  background: radial-gradient(circle at center,
+              rgba(147, 51, 234, 0.6),
+              rgba(79, 140, 255, 0.3),
+              transparent 70%);
+              
+  filter: blur(80px);
+
+  animation: moveBlob 18s ease-in-out infinite alternate;
 }
 
 /* HEADER */
@@ -125,6 +155,37 @@ body {
   animation: moveBackground 12s ease-in-out infinite alternate;
 }
 
+
+/* ANIMATION PRINCIPALE */
+
+@keyframes moveBlob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+    border-radius: 40% 60% 50% 70%;
+  }
+
+  25% {
+    transform: translate(-60px, 30px) scale(1.1);
+    border-radius: 60% 40% 70% 50%;
+  }
+
+  50% {
+    transform: translate(40px, -40px) scale(1.05);
+    border-radius: 50% 70% 40% 60%;
+  }
+
+  75% {
+    transform: translate(-30px, 20px) scale(1.15);
+    border-radius: 70% 50% 60% 40%;
+  }
+
+  100% {
+    transform: translate(50px, -30px) scale(1.1);
+    border-radius: 40% 60% 50% 70%;
+  }
+}
+
+
 /* ANIMATION */
 
 @keyframes moveBackground {
@@ -134,4 +195,38 @@ body {
   100% {
     transform: translate(-40px, -30px) scale(1.1);
   }
+}
+
+.background::before,
+.background::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  filter: blur(120px);
+  opacity: 0.5;
+}
+
+.background::before {
+  background: #4F8CFF;
+  top: 10%;
+  left: 10%;
+  animation: float1 10s infinite alternate;
+}
+
+.background::after {
+  background: #9333ea;
+  bottom: 10%;
+  right: 10%;
+  animation: float2 14s infinite alternate;
+}
+
+@keyframes float1 {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(80px, 40px); }
+}
+
+@keyframes float2 {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(-60px, -30px); }
 }
