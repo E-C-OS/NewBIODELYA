@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+Connexion
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -22,13 +22,16 @@
 <!-- HEADER -->
 <header class="header">
   <div class="logo">Biodelya</div>
+  <?php if(isset($_SESSION["user"])): ?>
+    <p>Connecté en tant que <?php echo htmlspecialchars($_SESSION["user"]); ?></p>
+  <?php endif; ?>
 
   <nav>
     <a href="#">Produit</a>
     <a href="#">Approche</a>
     <a href="#">Applications</a>
 
-    <!-- ✅ MENU DYNAMIQUE -->
+    <!-- MENU DYNAMIQUE -->
     <?php if(isset($_SESSION["user"])): ?>
       <a href="dashboard.php">Dashboard</a>
       <a href="logout.php">Déconnexion</a>
@@ -60,6 +63,29 @@
   <div class="card">Décisions éclairées</div>
   <div class="card">Résultats concrets</div>
 </section>
+
+
+<div class="auth-container">
+
+  <div class="auth-box">
+    <h2>Connexion</h2>
+
+    <form method="POST">
+      <input name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Mot de passe" required>
+
+      <button class="btn primary">Se connecter</button>
+    </form>
+
+    <p><?php echo htmlspecialchars($message); ?></p>
+
+    <p class="link">
+      <a href="register.php">Créer un compte</a>
+    </p>
+  </div>
+
+</div>
+
 
 <!-- JS -->
 <script>

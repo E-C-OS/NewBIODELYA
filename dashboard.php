@@ -31,7 +31,7 @@ if (!isset($_SESSION["user"])) {
 </header>
 
 <section class="hero">
-  <h1>Bienvenue <?php echo $_SESSION["user"]; ?></h1>
+  <h1>Bienvenue <?php echo htmlspecialchars($_SESSION["user"]); ?></h1>
   <p>Vous êtes connecté</p>
 </section>
 
