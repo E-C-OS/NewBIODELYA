@@ -6,7 +6,6 @@ session_start();
 include "db.php";
 ?>
 
-
 <?php
 echo "PHP fonctionne (pour le moment !)";
 ?>
